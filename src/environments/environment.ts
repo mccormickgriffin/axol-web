@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  redirectUrl: 'http://localhost:4200/callback',
+  redirectUri: 'http://localhost:4200/callback',
   clientId: '',
   scopes:
     'playlist-modify-public playlist-modify-private ' +
