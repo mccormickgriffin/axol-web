@@ -14,7 +14,10 @@ export class LocalStorageService {
   getItem(key: string): any {
     try {
       const item: string | null = localStorage.getItem(key);
-      return JSON.parse(item);
+      if (item) {
+        return JSON.parse(item);
+      }
+      return null;
     } catch (error) {
       return null;
     }
