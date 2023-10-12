@@ -19,7 +19,6 @@ export class AuthService {
   ) {}
 
   login(spotifyCode: string): Observable<boolean> {
-    console.log("api call: ", `${environment.apiUrl}${endpoints.login}`);
     return this.http
       .post<ILoginResponse>(`${environment.apiUrl}${endpoints.login}`, {
         code: spotifyCode,

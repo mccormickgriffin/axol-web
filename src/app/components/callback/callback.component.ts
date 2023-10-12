@@ -19,16 +19,15 @@ export class CallbackComponent {
     const code: string = this.route.snapshot.queryParams['code'];
     this.authService.login(code).subscribe({
       next: (response) => {
-        console.log("in next, response: ", response);
         if (response) {
           this.router.navigate([routes.dashboard]);
         } else {
           this.router.navigate([routes.login]);
         }
       },
-      error:() => {
+      error: () => {
         this.router.navigate([routes.login]);
-      }
-  });
+      },
+    });
   }
 }

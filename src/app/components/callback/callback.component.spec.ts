@@ -22,7 +22,7 @@ describe('CallbackComponent', () => {
 
   // Mock AuthService and Router
   const authServiceMock = {
-    login: jasmine.createSpy('login').and.returnValue(of(true)),
+    login: jasmine.createSpy('login'),
   };
   const routerMock = {
     navigate: jasmine.createSpy('navigate'),
@@ -49,17 +49,19 @@ describe('CallbackComponent', () => {
   });
 
   it('should call AuthService.login with the code from the query parameters', () => {
+    authServiceMock.login.and.returnValue(of(true));
     component.ngOnInit();
     expect(authService.login).toHaveBeenCalledWith('dummy-code');
   });
 
   it('should navigate to the dashboard on successful login', () => {
+    authServiceMock.login.and.returnValue(of(true));
     component.ngOnInit();
     expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 
   it('should navigate to the login page on login error', () => {
-    authServiceMock.login.and.returnValue(of(false)); // Simulate login error
+    authServiceMock.login.and.returnValue(of(null)); // Simulate login error
     component.ngOnInit();
     expect(router.navigate).toHaveBeenCalledWith(['/login']);
   });
