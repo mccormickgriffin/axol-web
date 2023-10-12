@@ -10,22 +10,26 @@ import { token } from 'src/app/lib/consts';
 import { ILoginResponse } from 'src/app/interfaces/login-response';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService) { }
+  constructor(
+    private http: HttpClient,
+    private localStorageService: LocalStorageService
+  ) {}
 
   login(spotifyCode: string): Observable<boolean> {
-    return this.http.post<ILoginResponse>(
-      `${environment.apiUrl}${endpoints.login}`,
-      { code: spotifyCode }
-    ).pipe(
-      map(result => {
-        this.localStorageService.setItem(token, result.token);
-        return true;
+    console.log("api call: ", `${environment.apiUrl}${endpoints.login}`);
+    return this.http
+      .post<ILoginResponse>(`${environment.apiUrl}${endpoints.login}`, {
+        code: spotifyCode,
       })
-    );
+      .pipe(
+        map((result) => {
+          this.localStorageService.setItem(token, result.token);
+          return true;
+        })
+      );
   }
 
   logout(): void {
@@ -33,6 +37,6 @@ export class AuthService {
   }
 
   public get loggedIn(): boolean {
-    return (this.localStorageService.getItem(token) !== null);
+    return this.localStorageService.getItem(token) !== null;
   }
 }
