@@ -1,0 +1,21 @@
+@import "src/app/styles/colors.scss";
+@import "src/app/styles/spacing.scss";
+@import "src/app/styles/fonts.scss";
+
+.login-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  background: $green;
+  color: $white;
+  text-decoration: none;
+  padding: $padding-small $padding-medium;
+  border-radius: 25px;
+  font-size: $base-font-size;
+  margin-top: $padding-medium;
+}
