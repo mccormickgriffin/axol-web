@@ -1,0 +1,20 @@
+@import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
+@import 'src/app/styles/spacing.scss';
+
+.top-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  background: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  padding-left: $padding-large;
+  padding-right: $padding-large;
+  font-size: $header-font-size;
+  box-shadow: 0px -2px 8px $dark-gray;
+}

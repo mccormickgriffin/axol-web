@@ -1,0 +1,8 @@
+@import 'src/app/styles/colors.scss';
+@import 'src/app/styles/fonts.scss';
+@import 'src/app/styles/spacing.scss';
+
+.app-content {
+  padding-top: $header-height;
+  min-height: $page-height;
+}

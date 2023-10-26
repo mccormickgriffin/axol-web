@@ -8,13 +8,15 @@ import { CallbackComponent } from './components/callback/callback.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth/auth.service';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CallbackComponent,
-    DashboardComponent
+    DashboardComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,

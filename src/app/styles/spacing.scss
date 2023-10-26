@@ -2,3 +2,6 @@ $padding-huge: 56px;
 $padding-large: 28px;
 $padding-medium: 16px;
 $padding-small: 8px;
+
+$header-height: 50px;
+$page-height: calc(100vh - #{$header-height});
