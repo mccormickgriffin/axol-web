@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopNavComponent } from './top-nav.component';
+import { ProfileNavComponent } from '../profile-nav/profile-nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('TopNavComponent', () => {
   let component: TopNavComponent;
@@ -8,7 +10,8 @@ describe('TopNavComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TopNavComponent]
+      declarations: [TopNavComponent, ProfileNavComponent],
+      imports: [HttpClientModule]
     });
     fixture = TestBed.createComponent(TopNavComponent);
     component = fixture.componentInstance;

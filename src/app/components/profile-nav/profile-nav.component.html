@@ -1,0 +1,9 @@
+<div *ngIf="profile" #profileContainer>
+  <button class="profile-container" (click)="toggleDropdown()">
+    {{ profile.displayName }}
+    <img *ngIf="profile && profile.imageUrl" [src]="profile.imageUrl" />
+  </button>
+  <button *ngIf="showDropdown" class="dropdown" (click)="logout()">
+    Logout
+  </button>
+</div>

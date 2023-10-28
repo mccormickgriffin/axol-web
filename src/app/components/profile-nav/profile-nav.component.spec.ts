@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
+import { ProfileNavComponent } from './profile-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('ProfileNavComponent', () => {
+  let component: ProfileNavComponent;
+  let fixture: ComponentFixture<ProfileNavComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DashboardComponent],
+      declarations: [ProfileNavComponent],
       imports: [HttpClientModule]
     });
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(ProfileNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
